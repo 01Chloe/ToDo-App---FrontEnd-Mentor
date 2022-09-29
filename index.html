@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="robots" content="index, follow">
+     <meta name="description" content="This is a To Do App, FrontEnd Mentor Challenge">
+     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+     <link rel="stylesheet" href="style.css">
+     <title>To Do App - FrontEnd Mentor Challenge</title>
+</head>
+
+<body>
+
+     <header>
+          <img src="./images/bg-desktop-dark.jpg" alt="couloir bleu et violet" class="bg-desktop bg-desktop-dark active">
+          <img src="./images/bg-desktop-light.jpg" alt="montagnes rose et bleu" class="bg-desktop bg-desktop-light">
+     </header>
+
+     <main>
+          <div class="top">
+               <h1>TODO</h1>
+               <button class="btn-mode">
+                    <img src="./images/icon-sun.svg" alt="soleil" class="img-mode img-mode-dark active">
+                    <img src="./images/icon-moon.svg" alt="lune" class="img-mode img-mode-light">
+               </button>
+          </div>
+
+          <div class="new active">
+               <div class="circle"></div>
+               <textarea placeholder="Create a new todo..." rows="1" cols="30"></textarea>
+          </div>
+          
+          <div class="list active">
+
+               <!-- add todo here in js -->
+
+               <div class="bottom active">
+                    <p class="nb-items">0 item</p>
+                    <button class="btn-view blue btn-all">All</button>
+                    <button class="btn-view active-btn">Active</button>
+                    <button class="btn-view completed-btn">Completed</button>
+                    <button class="clear-completed">Clear Completed</button>
+               </div>
+          </div>
+     </main>
+
+     <footer class="active">
+          <div class="attribution">
+               Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+               Coded by <a href="https://github.com/01Chloe" target="_blank">Chloé Allier</a>.
+          </div>
+     </footer>
+
+     <script src="app.js"></script>
+</body>
+</html>

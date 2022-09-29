@@ -1,0 +1,239 @@
+*, ::before, ::after{
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+}
+body{
+     height: auto;
+     background: hsl(235, 21%, 11%);
+     font-family: monospace;
+}
+body.light{
+     background: hsl(0, 0%, 98%);
+}
+
+/***** HEADER *****/
+header .bg-desktop.active{
+     display: block;
+     width: 100%;
+     height: auto;
+}
+header .bg-desktop{
+     z-index: -50;
+     display: none;
+}
+
+/****** MAIN ******/
+main{
+     position:absolute;
+     top: 15%;
+     left: 30%;
+     width: 40%;
+     height: auto;
+}
+main .top{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     color: hsl(234, 39%, 85%);
+}
+main h1{
+     font-family: serif;
+}
+main .top button{
+     background: transparent;
+     border: none;
+     cursor: pointer;
+}
+main .img-mode.active{
+     pointer-events: none;
+     display: block;
+}
+main .img-mode{
+     display: none;
+}
+
+/***** NEW *****/
+.new{
+     display: flex;
+     flex-direction: row;
+     justify-content: baseline;
+     align-items: center;
+     background:  hsl(236, 33%, 92%);
+     color: hsl(236, 9%, 61%);
+     width: 100%;
+     height: 50px;
+     margin: 35px 0;
+     border-radius: 5px;
+}
+.new.active{
+     background: hsl(237, 14%, 26%);
+     color: hsl(234, 39%, 85%);
+}
+.new .circle{
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     border: 1px solid hsl(236, 9%, 61%);
+     margin-left: 15px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.new.active .circle{
+     border: 1px solid hsl(234, 39%, 85%);
+}
+.new.active textarea{
+     color: hsl(234, 39%, 85%);
+}
+.new textarea{
+     resize: none;
+     background: transparent;
+     border: none;
+     outline: none;
+     margin-left: 5px;
+     font-size: 18px;
+     color: hsl(235, 19%, 35%);
+     padding: 5px 10px;
+     overflow: hidden;
+}
+
+/***** LIST  ITEM *****/
+.list{
+     display: flex;
+     flex-direction: column;
+     border-radius: 5px;
+     background:  hsl(236, 33%, 92%);
+     color: hsl(235, 19%, 35%);
+     height: auto;
+     margin-bottom: 50px;
+}
+.list.active{
+     background: hsl(237, 14%, 26%);
+     color: hsl(234, 39%, 85%);
+}
+.item{
+     color: hsl(234, 39%, 85%);
+     width: 100%;
+     padding: 10px 20px;
+     font-size: 18px;
+     display: flex;
+     flex-direction: row;
+     border-bottom: 1px solid hsl(234, 39%, 85%);
+     cursor: pointer;
+}
+.item.done{
+     text-decoration: line-through;
+     color: hsl(235, 19%, 35%);
+}
+.list.active .item.done{
+     text-decoration: line-through;
+     color: hsl(234, 39%, 85%);
+}
+.item.done .check-btn{
+     background: linear-gradient(45deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));  
+}
+.item p{
+     pointer-events: none;
+     color: hsl(235, 19%, 35%);
+}
+.list.active .item p{
+     color: hsl(234, 39%, 85%);
+}
+.item .check-btn{
+     width: 20px;
+     height: 20px;
+     border: 1px solid hsl(236, 9%, 61%);
+     border-radius: 50%;
+     margin-right: 10px;
+}
+
+/***** BOTTOM *****/
+.bottom{
+     order: 50;
+     padding: 5px 0;
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     border-radius: 5px;
+}
+.bottom.active{
+     background: hsl(237, 14%, 26%);
+}
+.bottom .btn-view,
+.bottom .clear-completed,
+.bottom .nb-items{
+     margin: 5px auto;
+     background: transparent;
+     color: hsl(235, 19%, 35%);
+     border: none;
+     font-size: 17px;
+     cursor: pointer;
+}
+.nb-items{
+     cursor: auto;
+}
+.bottom.active .btn-view,
+.bottom.active .clear-completed,
+.bottom.active .nb-items{
+     color: hsl(234, 39%, 85%);
+}
+.bottom .clear-completed{
+     transition: color 0.3s ease-out;
+}
+.bottom .clear-completed:active{
+     color: hsl(220, 98%, 61%);
+}
+.bottom .blue{
+     color: hsl(220, 98%, 61%)!important;
+}
+
+/***** FOOTER *****/
+footer{
+     display: block;
+     color: hsl(237, 14%, 26%);
+     position: fixed;
+     bottom: 1%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
+footer.active{
+     color: hsl(234, 39%, 85%);
+}
+.attribution { 
+     font-size: 11px; 
+     text-align: center; 
+}
+.attribution a { 
+     color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (max-width: 950px) {
+     main{
+          position:absolute;
+          top: 5%;
+          left: 10%;
+          min-width: 80%;
+     }
+}
+@media screen and (max-width: 650px) {
+     .img-mode-light{
+          background: rgba(0,0,0,0.3);
+          padding: 5px;
+          border-radius: 5px;
+     }
+     .list{
+          margin-bottom: 80px;
+     }
+}
+@media screen and (max-width: 530px) {
+     .nb-items{
+          display: none;
+     }
+}
+@media screen and (max-width: 400px) {
+     .bottom{
+          flex-direction: column;
+     }
+}
